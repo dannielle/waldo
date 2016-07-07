@@ -2,18 +2,58 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello, World! • A-Frame</title>
-    <meta name="description" content="Hello, World! • A-Frame">
-    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+    <title>cyovr</title>
+    <meta name="description" content="cyovr">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
+    <script src="js/aframe-particle-system-component.js"></script>
+    <script src="js/aframe-extras.min.js"></script>
   </head>
   <body>
-    <a-scene>
-      <a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cube position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-cube>
-      <a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+    <a-scene id="scene" physics>
 
-      <a-sky color="#ECECEC"></a-sky>
+      <a-assets>
+        <video id="morning" controls loop="true" src="videos/morning.MP4" webkit-playsinline></video>
+        <img id="cat1" src="img/cat1.png"></img>
+        <img id="cat2" src="img/cat2.png"></img>
+        <img id="cat3" src="img/cat3.png"></img>
+        <img id="cat4" src="img/cat4.png"></img>
+        <img id="cat5" src="img/cat5.png"></img>
+        <img id="cat6" src="img/cat6.png"></img>
+        <img id="cat7" src="img/cat7.png"></img>
+        <img id="cat8" src="img/cat8.png"></img>
+      </a-assets>
+
+      <a-light type="point" color="white" position="0 2.5 0" intensity="0.5"></a-light>
+      <a-light type="ambient" color="#222"></a-light>
+
+      <a-image src="#cat1" position="-10 -0.5 3" scale="2 2 2" look-at="[camera]"></a-image>
+      <a-image src="#cat2" position="-5 1.5 -3" scale="2 2 2" look-at="[camera]"></a-image>
+      <a-image src="#cat3" position="5 2.15 6.25" scale="1.5 1.5 1.5" look-at="[camera]"></a-image>
+      <a-image src="#cat4" position="5 -1 9" look-at="[camera]"></a-image>
+      <a-image src="#cat5" position="-5 2.15 10" look-at="[camera]"></a-image>
+      <a-image src="#cat6" position="-2.5 -1 10" scale="1.5 1.5 1.5" look-at="[camera]"></a-image>
+      <a-image src="#cat7" position="3 0 5" scale="1.5 1.5 1.5" look-at="[camera]"></a-image>
+      <a-image src="#cat8" position="1.5 5 0" look-at="[camera]"></a-image>
+
+      <a-entity position="0 2 5">
+        <a-entity camera look-controls id="player">
+          <a-cursor color="#FFFFFF">
+        </a-entity>
+      </a-entity>
+
+      <a-sky src="img/bg.png" rotation="0 90 0"></a-sky>
+
     </a-scene>
   </body>
+  <script>
+      var sceneEl = document.getElementsByTagName('a-scene')[0];
+
+      sceneEl.addEventListener('loaded', function() {
+        
+
+      });
+
+  </script>
 </html>
