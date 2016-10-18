@@ -2,10 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>cat simulator</title>
-    <meta name="description" content="cat simulator">
+    <title>waldo</title>
+    <meta name="description" content="waldo">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
+    <script src="js/aframe-particle-system-component.js"></script>
     <script src="js/aframe-extras.min.js"></script>
   </head>
   <body>
@@ -21,6 +23,7 @@
         <img id="cat6" src="img/cat6.png"></img>
         <img id="cat7" src="img/cat7.png"></img>
         <img id="cat8" src="img/cat8.png"></img>
+        <img id="waldo" src="img/waldo.png"></img>
       </a-assets>
 
       <a-light type="point" color="white" position="0 2.5 0" intensity="0.5"></a-light>
@@ -34,6 +37,7 @@
       <a-image src="#cat6" position="-2.5 -1 10" scale="1.5 1.5 1.5" look-at="[camera]"></a-image>
       <a-image src="#cat7" position="3 0 5" scale="1.5 1.5 1.5" look-at="[camera]"></a-image>
       <a-image src="#cat8" position="1.5 5 0" look-at="[camera]"></a-image>
+      <a-image src="#waldo" position="5 20 15" look-at="[camera]"></a-image>
 
       <a-entity position="0 2 5">
         <a-entity camera look-controls id="player">
@@ -49,8 +53,6 @@
       var sceneEl = document.getElementsByTagName('a-scene')[0];
 
       sceneEl.addEventListener('loaded', function() {
-        
-
       });
 
   </script>
